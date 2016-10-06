@@ -43,7 +43,7 @@ function licenseFinder(filename, options) {
 
 		var formatter = options.csv ? nlf.csvFormatter : nlf.standardFormatter;
 
-		formatter.render(data, function (err, output) {
+		formatter.render(data, {}, function (err, output) {
 			if (err) {
 				throw new gutil.PluginError(PLUGIN_NAME, err, {showStack: true});
 			}
